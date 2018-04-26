@@ -1,0 +1,52 @@
+Memcached
+
+This helps us to optimize the way we call our DB to get our data and store it locally to internal memory of our host over which service is running. They gets stored in app engine of host and they communicated internally with each other.
+It stores a lot of data at the backend side in there internal memory. SO this saves huge amount of time in connecting to db to again and again and fetch data, instead from internal memory spaces.
+Speeding up the dynamic web application and reduce usage of data load.
+Advantage :
+
+MemCahed components :
+It has two components :
+These are separate servers running there own processes. So, in case if we want to scale up our service , we just need to install Memcached in to others machines.
+The Memcached client, the second piece of the Memcached system, does know about each of the servers. The client is responsible for picking up the server for each cache entry.
+Disadvantages of using Memcached :
+
+This is not a persistence of storage of database.
+its not application specific.
+its limited to a file size of 1 mb itself. As it doesn’t store it more than this . Key size not more than 255 kb.
+
+Usage :
+Session management
+Speeding up our web application by caching data.
+Memcached Architecture :
+
+Managing replication problem in memcached :
+
+So here , let us suppose we do have three hosts , M1 , M2 M3 , that is storing db content in internal memory. We will replicate these objects regularly to keep them in sync, across all nodes in internet.
+In case of any such cache misses and data writes, we can call db directly.    
+
+
+
+
+Node rotation :
+
+
+
+
+
+Installing memcached in mac:
+brew install memcached
+Cachemere :
+
+Cachemere is a distributed cache client, designed specifically for use with CacheIn and CacheOut. Cachemere can operate as a pure remote distributed cache, a two-level cache, or a pure local cache.
+
+This is basically used for caching from multiple sources , that is distributed across multiple hosts .Curacao is an example of this client.
+how it works :
+We have MemcacheD in one host , and we create a cache pool from it , that server the purpose of distributed access . WE take a collection of multiple MemCacheD demons pools and then Curacao will help to access these distributed caching.
+So curaçao can talk to multiple cache pools at the same time.
+
+Distributed deep dive : Cache the number of records in access table from DDB , customer ID , keeping to throttle the customer ,    
+
+
+
+
