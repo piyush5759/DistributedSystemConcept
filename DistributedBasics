@@ -1,0 +1,51 @@
+Distributed System :
+bringing multiple systems machine , dependent of one another together in order to run some application/server.  Some set of information is distributed across all systems connected to each other over internet. Several independent computers connected to each other. 
+
+Distributed System Architecture 
+Fault-Tolerant: It can recover from component failures without performing incorrect actions.
+Highly Available: It can restore operations, permitting it to resume providing services even when some components have failed.
+Recoverable: Failed components can restart themselves and rejoin the system, after the cause of failure has been repaired.
+Consistent: The system can coordinate actions by multiple components often in the presence of concurrency and failure. This underlies the ability of a distributed system to act like a non-distributed system.
+Scalable: It can operate correctly even as some aspect of the system is scaled to a larger size. For example, we might increase the size of the network on which the system is running. This increases the frequency of network outages and could degrade a "non-scalable" system. Similarly, we might increase the number of users or servers, or overall load on the system. In a scalable system, this should not have a significant effect.
+Predictable Performance: The ability to provide desired responsiveness in a timely manner.
+Secure: The system authenticates access to data and services [1] 
+Manageability: Designing a system that is easy to operate is another important consideration. The manageability of the system equates to the scalability of operations: maintenance and updates. Things to consider for manageability are the ease of diagnosing and understanding problems when they occur, ease of making updates or modifications, and how simple the system is to operate. (I.e., does it routinely operate without failure or exceptions?)
+
+Example of distributed system:
+
+client - server architecture 
+bit torrent 
+web application .
+Spring Distribution. 
+
+Some Distributed Design Principles
+
+Given what we have covered so far, we can define some fundamental design principles which every distributed system designer and software engineer should know. Some of these may seem obvious, but it will be helpful as we proceed to have a good starting list
+
+System to be well designed to handled nay kind of failure / proper fault tolerant supported. 
+Keep a track of whatever data we are sending. Think carefully about how much data you send over the network. Minimize traffic as much as possible. 
+Consider monitoring our latency to decide what response time we can consider to respond to  the client 
+Use secure connections to connect to server back and forth.
+Caches and replication strategies are methods for dealing with state across components. 
+
+Leader Election Algorithm;
+In a distributed system we do have a number of system and they inter communicates with each other. through different approach of RPC and others.
+In distributed computing, leader election is the process of designating a single process as the organizer of some task distributed among several computers (nodes) 
+So here we will define one system as leader of all the systems to decide/organize. 
+Need to decide which hosts is going to act as coordinator once a process/hosts goes down. 
+
+
+Considerations :
+All individual systems can be identified using some unique numbers. 
+Process knows each other via the unique numbers that can be process number.  
+
+
+
+Things to keep in mind while deciding distributed system:
+
+CAP Theorem: Consistency , Avaialbility and Persistence 
+Replication ./ Consistency is managed by strong and eventually consistent 
+ 
+Content delivery network 
+This basically helps you to reduce the number of hops in order to help a client get there request served. 
+It stores a content in manny locations as per clients requesting them. 
